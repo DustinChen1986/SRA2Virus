@@ -9,4 +9,4 @@ Dependence:
 
 Usage:
 sra2picor.py -s SRRXXXXXXXX SRRXXXXXXXXX ...
--s: sra files with space
+1. -s: sra files with space
