@@ -25,6 +25,8 @@ def pairend_assemble(pairend):
     os.system(megahit)
     print('rm '+pairend+'_1_trim.fastq '+pairend+'_2_trim.fastq')
     os.system('rm '+pairend+'_1_trim.fastq '+pairend+'_2_trim.fastq') #remove trimed fastq
+    print('rm -rf ./'+pairend+'_megahit/intermediate_contigs')
+    os.system('rm -rf ./'+pairend+'_megahit/intermediate_contigs')
     diamond = pairend.join(['diamond blastx -p 12 -d picornavirus.dmnd -q ./','_megahit/','.contigs.fa --outfmt 6 -o ','_diamond.txt'])
     print(diamond)
     os.system(diamond)
@@ -47,6 +49,8 @@ def single_assemble(single):
     os.system(megahit)
     print('rm '+single+'_trim.fastq')
     os.system('rm '+single+'_trim.fastq')
+    print('rm -rf ./'+single+'_megahit/intermediate_contigs')
+    os.system('rm -rf ./'+single+'_megahit/intermediate_contigs')
     diamond = single.join(['diamond blastx -p 12 -d picornavirus.dmnd -q ./','_megahit/','.contigs.fa --outfmt 6 -o ','_diamond.txt'])
     print(diamond)
     os.system(diamond)
